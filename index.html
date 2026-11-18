@@ -1,0 +1,219 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Envois à valider · Galerie Cécile Fakhoury (démonstration)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:#111;background:#fff;-webkit-font-smoothing:antialiased}
+button{font-family:inherit}
+.demo{background:#B11B35;color:#fff;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.06em;padding:8px 12px;text-transform:uppercase}
+header{max-width:1240px;margin:0 auto;padding:26px 28px 6px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header img{height:34px}
+header .k{font-size:11px;font-weight:600;letter-spacing:.14em;color:#6B6B6B;text-transform:uppercase}
+main{max-width:1240px;margin:0 auto;padding:6px 28px 40px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:46px;line-height:1.05;margin:16px 0 10px}
+.lead{font-size:15.5px;line-height:1.6;color:#444;max-width:760px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-size:13.5px;color:#555}
+.meta b{color:#111;font-weight:600}
+.guard{margin:22px 0 18px;display:flex;align-items:center;gap:14px;background:#FBEAEC;border:1.5px solid #B11B35;border-radius:14px;padding:16px 20px}
+.guard svg{flex:none}
+.guard strong{display:block;font-size:19px;color:#8E1229;letter-spacing:-.01em}
+.guard span{display:block;font-size:13.5px;color:#6A2532;margin-top:3px;line-height:1.45}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.cnt{border:1px solid #E4E0D8;border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.cnt .l{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B6B6B}
+.cnt .v{font-size:38px;font-weight:700;line-height:1;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+.cnt.a{background:#FFF6E8;border-color:#F1D9AE}.cnt.a .v{color:#9A5B12}
+.cnt.b{background:#EEF6EA;border-color:#CFE3C4}.cnt.b .v{color:#2F5E17}
+.cnt.c{background:#EAF2FA;border-color:#C8DCEF}.cnt.c .v{color:#1B4F7A}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.f{border:1px solid #DDD;background:#fff;border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:600;cursor:pointer;color:#333}
+.f.on{background:#111;color:#fff;border-color:#111}
+.send{border:0;background:#111;color:#fff;border-radius:10px;padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;gap:8px;align-items:center}
+.send:disabled{background:#BDBDBD;cursor:not-allowed}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B6B6B;text-align:left;padding:10px 10px;border-bottom:1.5px solid #111}
+td{padding:14px 10px;border-bottom:1px solid #E9E6E0;vertical-align:top;font-size:14px}
+tr.refuse td{opacity:.55}
+.dest b{display:block;font-size:14.5px}
+.dest small{display:block;color:#6B6B6B;font-size:12.5px;margin-top:3px}
+.ex{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#F1EFEA;color:#6B6B6B;border-radius:6px;padding:2px 6px;margin-left:6px;vertical-align:2px}
+.ch{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13px;border-radius:8px;padding:5px 9px;white-space:nowrap}
+.ch.mail{background:#EEF2F7;color:#1F3B5A}.ch.wa{background:#E7F6EC;color:#156B3A}
+.ch small{font-weight:500;opacity:.8}
+.obj{font-weight:600;font-size:13.5px;line-height:1.4;margin-bottom:4px}
+.pv{color:#555;font-size:13.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mod{display:inline-block;font-size:11px;font-weight:700;color:#206D9C;margin-top:5px}
+.st{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:5px 10px;white-space:nowrap}
+.st.attente{background:#FFF0D6;color:#8A4F0B}.st.valide{background:#D9EAD3;color:#274E13}.st.refuse{background:#F4D7D7;color:#8E1229}.st.envoye{background:#DCE9F5;color:#1B4F7A}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.b{border:1px solid #D6D3CC;background:#fff;border-radius:9px;padding:7px 11px;font-size:13px;font-weight:600;cursor:pointer;color:#222;white-space:nowrap}
+.b:hover{border-color:#111}
+.b.ok{background:#2F6B1E;border-color:#2F6B1E;color:#fff}
+.b.no{color:#9C1B2E;border-color:#E3B9BF}
+.b:disabled{opacity:.35;cursor:not-allowed}
+.when{display:block;font-size:11.5px;color:#777;margin-top:5px}
+.foot{margin-top:22px;font-size:12.5px;color:#6B6B6B;line-height:1.6}
+.foot a{color:#206D9C}
+footer{max-width:1240px;margin:0 auto;padding:18px 28px 30px;border-top:1px solid #EEE;font-size:12px;color:#888}
+/* fenêtre de modification */
+.ov{position:fixed;inset:0;background:rgba(17,17,17,.45);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}
+.ov.on{display:flex}
+.dlg{background:#fff;border-radius:18px;width:100%;max-width:980px;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 360px}
+.ed{padding:24px 26px}
+.ed h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;line-height:1.1}
+.ed .to{font-size:13.5px;color:#555;margin:6px 0 16px}
+.ed label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B6B6B;margin:14px 0 6px}
+.ed input,.ed textarea{width:100%;border:1px solid #D6D3CC;border-radius:10px;padding:11px 13px;font:14.5px/1.5 Inter;color:#111;outline:none}
+.ed input:focus,.ed textarea:focus{border-color:#111}
+.ed textarea{min-height:250px;resize:vertical}
+.hint{font-size:12.5px;color:#6B6B6B;margin-top:8px;line-height:1.5}
+.pj{display:flex;gap:8px;align-items:center;font-size:13px;margin-top:10px;color:#333}
+.pj a{color:#206D9C;font-weight:600;text-decoration:none}
+.ed .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.prv{background:#F4F2EE;padding:24px 20px;border-left:1px solid #EEE}
+.prv .t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6B6B6B;margin-bottom:12px}
+.mailp{background:#fff;border:1px solid #E4E0D8;border-radius:12px;padding:16px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.mailp .h{font-size:12px;color:#666;border-bottom:1px solid #EEE;padding-bottom:10px;margin-bottom:10px;white-space:normal}
+.mailp .h b{color:#111}
+.wap{background:#E9E1D6;border-radius:12px;padding:16px 12px;min-height:200px}
+.wab{background:#D9FDD3;border-radius:10px 2px 10px 10px;padding:9px 11px 18px;font-size:14px;line-height:1.42;white-space:pre-wrap;word-wrap:break-word;margin-left:24px;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.wab .tm{position:absolute;right:9px;bottom:4px;font-size:10.5px;color:#667}
+.wah{font-size:13px;font-weight:600;color:#156B3A;margin-bottom:10px}
+.x{position:sticky;top:0;float:right;border:0;background:#F1EFEA;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;line-height:1}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;border-radius:12px;padding:12px 18px;font-size:14px;opacity:0;transition:.25s;z-index:30;max-width:92vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.cf ul{margin:12px 0 0 18px;font-size:14px;line-height:1.7}
+@media(max-width:900px){
+ header{padding:18px 16px 4px} main{padding:4px 16px 30px}
+ h1{font-size:34px}
+ .guard{padding:14px 15px}.guard strong{font-size:17px}
+ .counts{gap:8px}.cnt{flex-direction:column;align-items:flex-start;gap:6px;padding:12px}.cnt .v{font-size:34px}.cnt .l{font-size:10.5px;letter-spacing:.06em}
+ table,thead,tbody,tr,td{display:block;width:100%}
+ thead{display:none}
+ tr{border:1px solid #E4E0D8;border-radius:14px;padding:12px 14px;margin-bottom:12px}
+ td{border:0;padding:5px 0}
+ td.c-st{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+ td.c-st .when{margin-top:0}
+ .acts{justify-content:flex-start;margin-top:6px}
+ .acts .b{flex:1;text-align:center;padding:10px 8px}
+ .bar{flex-direction:column;align-items:stretch}.filters{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0;scrollbar-width:none}.f{white-space:nowrap;padding:8px 12px}.send{justify-content:center}
+ .dlg{grid-template-columns:1fr}.prv{border-left:0;border-top:1px solid #EEE}
+ .ed{padding:20px 18px}.ed textarea{min-height:200px}
+}
+</style></head><body>
+<div class="demo">Démonstration · destinataires d'exemple, aucun message n'est envoyé</div>
+<header><img src="img/logo.png" alt="Galerie Cécile Fakhoury"><span class="k">Envois à valider</span></header>
+<main>
+<h1>Envois à valider</h1>
+<p class="lead">Chaque message prévu pour la presse et sur WhatsApp arrive ici avant de partir. Vous le lisez, vous le personnalisez si besoin, puis vous le validez ou le refusez. Seuls les envois validés peuvent partir.</p>
+<div class="meta"><span>Annonce : <b>16e Biennale de Dakar et Lu Nëbtu, Kassou Seydou au Sokhamon</b></span><span>Envoi prévu le <b>18/11/2026</b></span><span>Responsable des envois : <b>Marie (presse)</b></span></div>
+<div class="guard">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#B11B35" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+<div><strong>Rien ne part sans votre validation.</strong><span>Un message en attente ou refusé reste ici. Chaque texte se modifie avant l'envoi : prénom, phrase d'accroche, langue.</span></div>
+</div>
+<div class="counts">
+<div class="cnt a"><span class="l">À valider</span><span class="v" id="c-a">0</span></div>
+<div class="cnt b"><span class="l">Validés</span><span class="v" id="c-v">0</span></div>
+<div class="cnt c"><span class="l">Envoyés</span><span class="v" id="c-e">0</span></div>
+</div>
+<div class="bar">
+<div class="filters" id="filters">
+<button class="f on" data-f="all">Tous</button><button class="f" data-f="attente">À valider</button><button class="f" data-f="mail">E-mail presse</button><button class="f" data-f="wa">WhatsApp</button>
+</div>
+<button class="send" id="send"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg><span id="send-l">Envoyer les envois validés</span></button>
+</div>
+<table><thead><tr><th style="width:21%">Destinataire</th><th style="width:12%">Canal</th><th>Objet et aperçu du message</th><th style="width:10%">Statut</th><th style="width:22%;text-align:right">Décision</th></tr></thead><tbody id="tb"></tbody></table>
+<p class="foot">Liste reprise de l'onglet « Diffusion » du <a href="https://docs.google.com/spreadsheets/d/1aknclWv1cGK35DSVg1Q5kgfTJerSkcxCCb0kxfzrJag/edit" target="_blank" rel="noopener">classeur Suivi presse</a> (relevé du 18/11/2026). Médias, contacts et groupes marqués « Exemple » : noms génériques, à remplacer par vos vrais contacts. Une décision prise ici se reporte dans la colonne Statut du classeur.</p>
+</main>
+<footer>Page de démonstration, non référencée. Aucun e-mail ni message WhatsApp ne part depuis cette page.</footer>
+
+<div class="ov" id="ov"><div class="dlg">
+<div class="ed"><button class="x" id="x" aria-label="Fermer">×</button>
+<h2 id="e-t">Modifier le message</h2><p class="to" id="e-to"></p>
+<div id="e-objw"><label for="e-obj">Objet</label><input id="e-obj"></div>
+<label for="e-msg">Message</label><textarea id="e-msg"></textarea>
+<p class="hint">Personnalisez librement : prénom, une phrase pour ce journaliste ou cet artiste, la langue. L'aperçu se met à jour pendant que vous écrivez.</p>
+<div class="pj" id="e-pj"></div>
+<div class="row"><button class="b" id="e-save">Enregistrer</button><button class="b ok" id="e-ok">Enregistrer et valider</button><button class="b no" id="e-no">Refuser</button></div>
+</div>
+<div class="prv"><div class="t">Ce que recevra le destinataire</div><div id="e-prv"></div></div>
+</div></div>
+
+<div class="ov" id="ov2"><div class="dlg" style="grid-template-columns:1fr;max-width:560px"><div class="ed cf">
+<h2>Envoyer les envois validés</h2><p class="to" id="cf-n"></p><ul id="cf-l"></ul>
+<p class="hint">Démonstration : en vrai, l'envoi part de la boîte presse de la galerie et de son WhatsApp, seulement pour ces lignes.</p>
+<div class="row"><button class="b ok" id="cf-ok">Confirmer l'envoi</button><button class="b" id="cf-x">Annuler</button></div>
+</div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA=[{"n": 1, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Quotidien culturel B", "contact": "Fatou Ndiaye", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Fatou,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 2, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Quotidien culturel C", "contact": "Moussa Sarr", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Moussa,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 3, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Magazine panafricain A", "contact": "Claire Mensah", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Claire,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 4, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Radio culturelle A", "contact": "Julien Morel", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Julien,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 5, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Revue d'art en ligne A", "contact": "Nadia Okafor", "lang": "Anglais", "piece": "Communiqué EN + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar-en.html", "objet": "Galerie Cécile Fakhoury at the 16th Dakar Biennale · Lu Nëbtu, Kassou Seydou at the Sokhamon", "msg": "Dear Nadia,\n\nFrom 19 November to 19 December, three artists the gallery has worked with are showing at the Dakar Biennale, and the gallery presents Lu Nëbtu, a solo exhibition by Kassou Seydou at the Sokhamon.\n\nYou will find the press release and HD images in the press kit. I would be glad to arrange a visit or an interview.\n\nPress kit: https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 6, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Magazine d'art B", "contact": "James Carter", "lang": "Anglais", "piece": "Communiqué EN + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar-en.html", "objet": "Galerie Cécile Fakhoury at the 16th Dakar Biennale · Lu Nëbtu, Kassou Seydou at the Sokhamon", "msg": "Dear James,\n\nFrom 19 November to 19 December, three artists the gallery has worked with are showing at the Dakar Biennale, and the gallery presents Lu Nëbtu, a solo exhibition by Kassou Seydou at the Sokhamon.\n\nYou will find the press release and HD images in the press kit. I would be glad to arrange a visit or an interview.\n\nPress kit: https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 7, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Site d'art A", "contact": "Emily Brooks", "lang": "Anglais", "piece": "Communiqué EN + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar-en.html", "objet": "Galerie Cécile Fakhoury at the 16th Dakar Biennale · Lu Nëbtu, Kassou Seydou at the Sokhamon", "msg": "Dear Emily,\n\nFrom 19 November to 19 December, three artists the gallery has worked with are showing at the Dakar Biennale, and the gallery presents Lu Nëbtu, a solo exhibition by Kassou Seydou at the Sokhamon.\n\nYou will find the press release and HD images in the press kit. I would be glad to arrange a visit or an interview.\n\nPress kit: https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "attente", "par": "", "vdate": "", "ex": true, "media": true}, {"n": 8, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Quotidien culturel A", "contact": "Awa Koné", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Awa,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": true}, {"n": 9, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Quotidien culturel D", "contact": "Inès Bernard", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Inès,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "attente", "par": "", "vdate": "", "ex": true, "media": true}, {"n": 10, "canal": "E-mail", "sous": "Presse", "kind": "mail", "dest": "Magazine d'art A", "contact": "Paul Lemaire", "lang": "Français", "piece": "Communiqué FR + kit presse", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "La Galerie Cécile Fakhoury à la 16e Biennale de Dakar · Lu Nëbtu, Kassou Seydou au Sokhamon", "msg": "Bonjour Paul,\n\nDu 19 novembre au 19 décembre, trois artistes avec qui la galerie a collaboré exposent à la Biennale de Dakar, et la galerie présente Lu Nëbtu, exposition personnelle de Kassou Seydou au Sokhamon.\n\nVous trouverez le communiqué et les visuels HD dans le kit presse. Je reste à votre disposition pour une visite ou un entretien.\n\nKit presse : https://leslita06.github.io/gcf-editorial/kit-presse.html\n\nMarie\nGalerie Cécile Fakhoury", "st": "attente", "par": "", "vdate": "", "ex": true, "media": true}, {"n": 11, "canal": "WhatsApp", "sous": "Groupe", "kind": "wa-g", "dest": "Groupe Collectionneurs de la galerie", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Chers amis de la galerie, la Biennale de Dakar ouvre le 19 novembre. Nous y accompagnons Kassou Seydou avec Lu Nëbtu, au Sokhamon, et trois artistes avec qui nous avons collaboré exposent dans la sélection officielle. Le communiqué : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. Nous serions heureux de vous y retrouver.", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": false}, {"n": 12, "canal": "WhatsApp", "sous": "Groupe", "kind": "wa-g", "dest": "Groupe Artistes de la galerie", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Bonjour [Prénom],\n\nLe communiqué de la Biennale part demain auprès de la presse. Le voici avant diffusion : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. N'hésite pas à le partager sur tes réseaux à partir du 19 novembre, en mentionnant la galerie.", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": false}, {"n": 13, "canal": "WhatsApp", "sous": "Message individuel", "kind": "wa-i", "dest": "Kassou Seydou", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Bonjour Kassou,\n\nLe communiqué de la Biennale part demain auprès de la presse. Le voici avant diffusion : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. N'hésite pas à le partager sur tes réseaux à partir du 19 novembre, en mentionnant la galerie.", "st": "valide", "par": "Direction", "vdate": "17/11/2026", "ex": true, "media": false}, {"n": 14, "canal": "WhatsApp", "sous": "Message individuel", "kind": "wa-i", "dest": "Serigne Ibrahima Dieye", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Bonjour Serigne,\n\nLe communiqué de la Biennale part demain auprès de la presse. Le voici avant diffusion : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. N'hésite pas à le partager sur tes réseaux à partir du 19 novembre, en mentionnant la galerie.", "st": "attente", "par": "", "vdate": "", "ex": true, "media": false}, {"n": 15, "canal": "WhatsApp", "sous": "Message individuel", "kind": "wa-i", "dest": "Cheikh Ndiaye", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Bonjour Cheikh,\n\nLe communiqué de la Biennale part demain auprès de la presse. Le voici avant diffusion : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. N'hésite pas à le partager sur tes réseaux à partir du 19 novembre, en mentionnant la galerie.", "st": "attente", "par": "", "vdate": "", "ex": true, "media": false}, {"n": 16, "canal": "WhatsApp", "sous": "Message individuel", "kind": "wa-i", "dest": "Eva Diallo", "contact": "", "lang": "Français", "piece": "Lien du communiqué", "lien": "https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html", "objet": "", "msg": "Bonjour Eva,\n\nLe communiqué de la Biennale part demain auprès de la presse. Le voici avant diffusion : https://leslita06.github.io/gcf-editorial/communique-biennale-dakar.html. N'hésite pas à le partager sur tes réseaux à partir du 19 novembre, en mentionnant la galerie.", "st": "attente", "par": "", "vdate": "", "ex": true, "media": false}];
+const ICM='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>';
+const ICW='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>';
+const LAB={attente:'À valider',valide:'Validé',refuse:'Refusé',envoye:'Envoyé'};
+let S=DATA.map(d=>Object.assign({},d,{orig:d.msg,origObj:d.objet,edited:false,when:d.st==='valide'&&d.par?'Validé par la '+d.par.toLowerCase()+' le '+d.vdate:''}));
+let F='all', cur=null;
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function draw(){
+ const tb=$('#tb'); tb.innerHTML='';
+ S.filter(d=>F==='all'||(F==='attente'&&d.st==='attente')||(F==='mail'&&d.kind==='mail')||(F==='wa'&&d.kind!=='mail')).forEach(d=>{
+  const tr=document.createElement('tr'); if(d.st==='refuse')tr.className='refuse';
+  const sub=d.kind==='mail'?(d.contact+' · '+d.lang):(d.sous+' · '+d.lang);
+  const ch=d.kind==='mail'?'<span class="ch mail">'+ICM+'E-mail <small>presse</small></span>':'<span class="ch wa">'+ICW+'WhatsApp <small>'+(d.kind==='wa-g'?'groupe':'individuel')+'</small></span>';
+  const lock=d.st==='envoye';
+  tr.innerHTML='<td class="dest"><b>'+esc(d.dest)+(d.ex?'<span class="ex">Exemple</span>':'')+'</b><small>'+esc(sub)+'</small></td>'+
+   '<td>'+ch+'</td>'+
+   '<td>'+(d.objet?'<div class="obj">'+esc(d.objet)+'</div>':'')+'<div class="pv">'+esc(d.msg.replace(/,\s*\n+\s*(\S)/,(m,c)=>', '+c.toLowerCase()).replace(/\s*\n+\s*/g,' '))+'</div>'+(d.edited?'<span class="mod">✎ Personnalisé</span>':'')+'</td>'+
+   '<td class="c-st"><span class="st '+d.st+'">'+LAB[d.st]+'</span>'+(d.when?'<span class="when">'+d.when+'</span>':'')+'</td>'+
+   '<td><div class="acts"><button class="b" data-a="m" data-n="'+d.n+'"'+(lock?' disabled':'')+'>Modifier</button>'+
+   '<button class="b ok" data-a="v" data-n="'+d.n+'"'+(lock||d.st==='valide'?' disabled':'')+'>Valider</button>'+
+   '<button class="b no" data-a="r" data-n="'+d.n+'"'+(lock||d.st==='refuse'?' disabled':'')+'>Refuser</button></div></td>';
+  tb.appendChild(tr);
+ });
+ const c=k=>S.filter(d=>d.st===k).length;
+ $('#c-a').textContent=c('attente'); $('#c-v').textContent=c('valide'); $('#c-e').textContent=c('envoye');
+ const nv=c('valide'); $('#send').disabled=!nv; $('#send-l').textContent=nv?'Envoyer les '+nv+' envois validés':'Aucun envoi validé';
+}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),3200)}
+function now(){const d=new Date();return 'le '+d.toLocaleDateString('fr-FR')+' à '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}
+function setSt(d,st){d.st=st;d.when=(st==='valide'?'Validé ':st==='refuse'?'Refusé ':'')+now();draw()}
+function prv(){
+ const d=cur, m=$('#e-msg').value, o=$('#e-obj').value;
+ if(d.kind==='mail') $('#e-prv').innerHTML='<div class="mailp"><div class="h">De : <b>Marie, Galerie Cécile Fakhoury</b><br>À : <b>'+esc(d.contact)+'</b>, '+esc(d.dest)+'<br>Objet : <b>'+esc(o)+'</b><br>Pièce : '+esc(d.piece)+'</div>'+esc(m)+'</div>';
+ else $('#e-prv').innerHTML='<div class="wap"><div class="wah">'+esc(d.dest)+'</div><div class="wab">'+esc(m)+'<span class="tm">11:30 ✓✓</span></div></div>';
+}
+function openEd(d){
+ cur=d; $('#e-t').textContent=d.kind==='mail'?'Modifier l\'e-mail':'Modifier le message WhatsApp';
+ $('#e-to').innerHTML='Pour <b>'+esc(d.dest)+'</b>'+(d.contact?' · '+esc(d.contact):'')+' · '+esc(d.lang)+(d.ex?' · <span class="ex" style="margin:0">Exemple</span>':'');
+ $('#e-objw').style.display=d.kind==='mail'?'block':'none';
+ $('#e-obj').value=d.objet; $('#e-msg').value=d.msg;
+ $('#e-pj').innerHTML=(d.kind==='mail'?ICM:ICW)+' '+esc(d.piece)+' : <a href="'+d.lien+'" target="_blank" rel="noopener">ouvrir</a>';
+ prv(); $('#ov').classList.add('on');
+}
+function saveEd(){const d=cur;const m=$('#e-msg').value,o=$('#e-obj').value;if(m!==d.orig||o!==d.origObj)d.edited=true;d.msg=m;d.objet=o}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button'); if(!b)return;
+ if(b.dataset.a){const d=S.find(x=>x.n==b.dataset.n);
+  if(b.dataset.a==='m')openEd(d);
+  if(b.dataset.a==='v'){setSt(d,'valide');toast('Validé : '+d.dest+'. Il partira au prochain envoi.')}
+  if(b.dataset.a==='r'){setSt(d,'refuse');toast('Refusé : '+d.dest+'. Ce message ne partira pas.')}
+ }
+ if(b.dataset.f){F=b.dataset.f;document.querySelectorAll('.f').forEach(x=>x.classList.toggle('on',x===b));draw()}
+});
+$('#e-msg').addEventListener('input',prv); $('#e-obj').addEventListener('input',prv);
+$('#x').onclick=()=>$('#ov').classList.remove('on');
+$('#e-save').onclick=()=>{saveEd();$('#ov').classList.remove('on');draw();toast('Message enregistré. Il reste à valider.')};
+$('#e-ok').onclick=()=>{saveEd();$('#ov').classList.remove('on');setSt(cur,'valide');toast('Enregistré et validé : '+cur.dest+'.')};
+$('#e-no').onclick=()=>{$('#ov').classList.remove('on');setSt(cur,'refuse');toast('Refusé : '+cur.dest+'.')};
+$('#send').onclick=()=>{const v=S.filter(d=>d.st==='valide');$('#cf-n').textContent=v.length+' envois validés vont partir. Les envois à valider et refusés restent ici.';
+ $('#cf-l').innerHTML=v.map(d=>'<li>'+esc(d.dest)+' · '+(d.kind==='mail'?'e-mail':'WhatsApp')+'</li>').join('');$('#ov2').classList.add('on')};
+$('#cf-x').onclick=()=>$('#ov2').classList.remove('on');
+$('#cf-ok').onclick=()=>{S.filter(d=>d.st==='valide').forEach(d=>{d.st='envoye';d.when='Envoyé '+now()});$('#ov2').classList.remove('on');draw();toast('Démonstration : rien n\'est réellement parti.')};
+['ov','ov2'].forEach(i=>$('#'+i).addEventListener('click',e=>{if(e.target.id===i)e.target.classList.remove('on')}));
+draw();
+</script>
+</body></html>
